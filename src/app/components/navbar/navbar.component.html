@@ -4,7 +4,10 @@
       <a [routerLink]="['/']" class="brand-logo">LetsChat</a>
     </div>
     <ul class="right">
-      <li><a [routerLink]="['/auth/login']">Login</a></li>
+      <li>
+        <a *ngIf="!(authService.user | async)" [routerLink]="['/auth/login']">Login</a>        
+        <a *ngIf="(authService.user | async)" (click)="authService.logout()" [routerLink]="['/auth/login']">Logout</a>
+      </li>
     </ul>
   </nav>
 </div>

@@ -41,8 +41,8 @@ export class AuthService {
   public isLoggedIn(): Observable<boolean> {
     return this.user.map((user) => user ? true: false);
   }
-  public currentUser(): Observable<firebase.User> {
-    return this.user;
+  public get currentUser(): firebase.User {
+    return this.firebaseAuth.auth.currentUser;
   }
 
 }
