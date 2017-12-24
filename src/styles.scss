@@ -1,0 +1,10 @@
+/* You can add global styles to this file, and also import other style files */
+
+// Important to avoid error in webpack compilation
+$roboto-font-path: "../node_modules/materialize-css/dist/fonts/roboto/" !default;
+@import "../node_modules/materialize-css/sass/materialize.scss";
+
+// Important to avoid error in webpack compilation
+$fa-font-path: "../node_modules/font-awesome/fonts" !default;
+@import "../node_modules/font-awesome/scss/font-awesome.scss";
+
