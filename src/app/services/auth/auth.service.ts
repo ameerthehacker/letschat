@@ -10,7 +10,8 @@ export class AuthService {
 
   public static providers = {
     FACEBOOK: 0,
-    GOOGLE: 1
+    GOOGLE: 1,
+    GITHUB: 2
   }
   public user:Observable<firebase.User>;
 
@@ -38,6 +39,10 @@ export class AuthService {
     else if (provider == AuthService.providers.GOOGLE) {
       // Login with google
       return this.firebaseAuth.auth.signInWithRedirect(new firebase.auth.GoogleAuthProvider());
+    }
+    else if (provider == AuthService.providers.GITHUB) {
+      // Login with google
+      return this.firebaseAuth.auth.signInWithRedirect(new firebase.auth.GithubAuthProvider());
     }
   }
   public logout() {

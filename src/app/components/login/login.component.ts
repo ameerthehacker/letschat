@@ -9,24 +9,15 @@ import { Router } from '@angular/router';
 })
 export class LoginComponent implements OnInit {
 
+  public authProviders = AuthService.providers;
+
   constructor(private authService: AuthService, 
     private router: Router) { }
 
   ngOnInit() {
   }
-  onFacebookLoginClick() {
-    this.authService.login(AuthService.providers.FACEBOOK)
-    .then((user) => {
-      if(user) {
-        this.router.navigate(['/']);        
-      }
-    })
-    .catch((err) => {
-      // TODO: Handle errors in OAuth
-    });
-  }
-  onGoogleLoginClick() {
-    this.authService.login(AuthService.providers.GOOGLE)
+  onBtnLoginClick(provider) {
+    this.authService.login(provider)
     .then((user) => {
       if(user) {
         this.router.navigate(['/']);        
