@@ -25,5 +25,16 @@ export class LoginComponent implements OnInit {
       // TODO: Handle errors in OAuth
     });
   }
+  onGoogleLoginClick() {
+    this.authService.login(AuthService.providers.GOOGLE)
+    .then((user) => {
+      if(user) {
+        this.router.navigate(['/']);        
+      }
+    })
+    .catch((err) => {
+      // TODO: Handle errors in OAuth
+    });
+  }
 
 }

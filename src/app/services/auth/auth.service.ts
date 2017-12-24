@@ -9,7 +9,8 @@ import { Router } from '@angular/router';
 export class AuthService {
 
   public static providers = {
-    FACEBOOK: 0
+    FACEBOOK: 0,
+    GOOGLE: 1
   }
   public user:Observable<firebase.User>;
 
@@ -32,7 +33,11 @@ export class AuthService {
   public login(provider) {
     if (provider == AuthService.providers.FACEBOOK) {
       // Login with facebook
-      return this.firebaseAuth.auth.signInWithRedirect(new firebase.auth.FacebookAuthProvider())
+      return this.firebaseAuth.auth.signInWithRedirect(new firebase.auth.FacebookAuthProvider());
+    }
+    else if (provider == AuthService.providers.GOOGLE) {
+      // Login with google
+      return this.firebaseAuth.auth.signInWithRedirect(new firebase.auth.GoogleAuthProvider());
     }
   }
   public logout() {
