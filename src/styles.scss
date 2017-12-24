@@ -8,3 +8,11 @@ $roboto-font-path: "../node_modules/materialize-css/dist/fonts/roboto/" !default
 $fa-font-path: "../node_modules/font-awesome/fonts" !default;
 @import "../node_modules/font-awesome/scss/font-awesome.scss";
 
+.login-box {
+    margin-top: 60px;
+    border-radius: 5px;
+}
+
+.fluid {
+    width: 100%;
+}
