@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Observable } from "rxjs/Rx";
 
 import { User } from "../../models/user";
 import { Thread } from "../../models/thread";
@@ -11,20 +12,20 @@ import { AuthService } from '../../services/auth/auth.service';
 @Component({
   selector: 'lc-threads',
   templateUrl: './threads.component.html',
-  styles: []
+  styleUrls: ['./threads.component.scss']
 })
 export class ThreadsComponent implements OnInit {
 
-  public currentUser: User;
+  public currentUser: Observable<firebase.User>;
   public threadList: Thread[];
 
   constructor(private firestore: AngularFirestore, private authService: AuthService) { }
 
   ngOnInit() {
     this.threadList = [];
+    this.currentUser = this.authService.user;    
     // Get the current user
     this.authService.user.subscribe((user) => {
-      this.currentUser = user;
       // Get the user threads
       this.firestore.doc(`users/${user.uid}`)
       .valueChanges()
