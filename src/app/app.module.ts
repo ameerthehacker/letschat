@@ -4,6 +4,7 @@ import { AngularFireModule } from "angularfire2";
 import { AngularFireAuthModule } from "angularfire2/auth"
 import { AngularFirestoreModule } from "angularfire2/firestore";
 import { RouterModule } from "@angular/router";
+import { FormsModule } from "@angular/forms";
 
 import { APP_ROUTE } from "../app/routes/app.route";
 import { environment } from "../environments/environment";
@@ -35,6 +36,7 @@ import { ChatBoxComponent } from './components/threads/chat-box/chat-box.compone
     AngularFireModule.initializeApp(environment.firebaseConfig),
     AngularFireAuthModule,
     AngularFirestoreModule,
+    FormsModule,
     RouterModule.forRoot(APP_ROUTE)
   ],
   providers: [
