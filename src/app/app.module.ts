@@ -2,6 +2,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { AngularFireModule } from "angularfire2";
 import { AngularFireAuthModule } from "angularfire2/auth"
+import { AngularFirestoreModule } from "angularfire2/firestore";
 import { RouterModule } from "@angular/router";
 
 import { APP_ROUTE } from "../app/routes/app.route";
@@ -15,6 +16,7 @@ import { LoginComponent } from './components/login/login.component';
 import { HomeComponent } from './components/home/home.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { ThreadsComponent } from './components/threads/threads.component';
+import { ThreadListComponent } from './components/threads/thread-list/thread-list.component';
 
 
 @NgModule({
@@ -23,12 +25,14 @@ import { ThreadsComponent } from './components/threads/threads.component';
     LoginComponent,
     HomeComponent,
     NavbarComponent,
-    ThreadsComponent
+    ThreadsComponent,
+    ThreadListComponent
   ],
   imports: [
     BrowserModule,
     AngularFireModule.initializeApp(environment.firebaseConfig),
     AngularFireAuthModule,
+    AngularFirestoreModule,
     RouterModule.forRoot(APP_ROUTE)
   ],
   providers: [
