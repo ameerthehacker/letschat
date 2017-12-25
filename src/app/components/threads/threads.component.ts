@@ -17,6 +17,7 @@ import { AuthService } from '../../services/auth/auth.service';
 export class ThreadsComponent implements OnInit {
 
   public currentUser: Observable<firebase.User>;
+  public status: string;
   public threads: Thread[];
 
   constructor(private firestore: AngularFirestore, private authService: AuthService) { }
@@ -30,6 +31,7 @@ export class ThreadsComponent implements OnInit {
       this.firestore.doc(`users/${user.uid}`)
       .valueChanges()
       .subscribe((userDoc: any) => {
+        this.status = userDoc.status;
         let threads = userDoc.threads;
         // Check if user has any threads
         if(threads) {

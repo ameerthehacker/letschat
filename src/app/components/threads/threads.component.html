@@ -8,7 +8,7 @@
                         <div class="content">
                             <img src="{{ (currentUser | async)?.photoURL }}" alt="Your DP" class="ui mini left floated circular image">
                             <div class="header">{{ (currentUser | async)?.displayName }}</div>
-                            <div class="meta">** Status **</div>
+                            <div class="meta">{{ status }}</div>
                         </div>
                     </div>
                     <div class="ui icon fluid input">
