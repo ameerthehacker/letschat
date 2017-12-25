@@ -1,24 +1,21 @@
 <lc-navbar></lc-navbar>
-<div class="container">
+<div class="ui grid">
   <div class="row">
-    <div class="col offset-m3 m6 s12">
-      <div class="card login-box">
-        <div class="card-content">
-          <h4 class="card-tile center-align"><i class="fa fa-user"></i> &nbsp;Login</h4>
-          <div class="row">
-            <div class="col s12">
-              <button class="btn waves-effect waves-dark blue btn-large fluid" (click)="onBtnLoginClick(authProviders.FACEBOOK)"><i class="fa fa-facebook-square"></i> &nbsp; Login With Facebook</button>
-            </div>
+    <div class="five wide column"></div>
+    <div class="six wide column">
+      <div class="ui segments login-box">
+        <div class="ui secondary segment">
+          <h1 class="text-center"><i class="fa fa-user"></i> &nbsp;Login</h1>
+        </div> 
+        <div class="ui segment">
+          <div class="margin-top-10">
+            <button class="ui fluid facebook massive button" (click)="onBtnLoginClick(authProviders.FACEBOOK)"><i class="fa fa-facebook-square"></i> &nbsp; Login With Facebook</button>
           </div>
-          <div class="row">
-            <div class="col s12">
-              <button class="btn waves-effect waves-dark red btn-large fluid" (click)="onBtnLoginClick(authProviders.GOOGLE)"><i class="fa fa-google"></i> &nbsp; Login With Google</button>
-            </div>
+          <div class="margin-top-10">
+            <button class="ui fluid google plus massive button" (click)="onBtnLoginClick(authProviders.GOOGLE)"><i class="fa fa-google"></i> &nbsp; Login With Google</button>
           </div>
-          <div class="row">
-            <div class="col s12">
-              <button class="btn waves-effect waves-dark black btn-large fluid" (click)="onBtnLoginClick(authProviders.GITHUB)"><i class="fa fa-github"></i> &nbsp; Login With Github</button>
-            </div>
+          <div class="margin-top-10">
+            <button class="ui fluid black massive button" (click)="onBtnLoginClick(authProviders.GITHUB)"><i class="fa fa-github"></i> &nbsp; Login With Github</button>
           </div>
         </div>
       </div>

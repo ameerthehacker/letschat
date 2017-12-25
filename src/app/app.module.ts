@@ -16,7 +16,6 @@ import { LoginComponent } from './components/login/login.component';
 import { HomeComponent } from './components/home/home.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { ThreadsComponent } from './components/threads/threads.component';
-import { ThreadListComponent } from './components/threads/thread-list/thread-list.component';
 
 
 @NgModule({
@@ -25,8 +24,7 @@ import { ThreadListComponent } from './components/threads/thread-list/thread-lis
     LoginComponent,
     HomeComponent,
     NavbarComponent,
-    ThreadsComponent,
-    ThreadListComponent
+    ThreadsComponent
   ],
   imports: [
     BrowserModule,

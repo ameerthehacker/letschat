@@ -1,13 +1,7 @@
-<div class="navbar-fixed">
-  <nav>
-    <div id="navbar-wrapper">
-      <a [routerLink]="['/']" class="brand-logo">LetsChat</a>
-    </div>
-    <ul class="right">
-      <li>
-        <a *ngIf="!(authService.user | async)" [routerLink]="['/auth/login']">Login</a>        
-        <a *ngIf="(authService.user | async)" (click)="authService.logout()" [routerLink]="['/auth/login']">Logout</a>
-      </li>
-    </ul>
-  </nav>
+<div class="ui fixed massive menu">
+  <a [routerLink]="['/']" class="item">LetsChat</a>    
+  <div class="right menu">
+    <a class="item" *ngIf="!(authService.user | async)" [routerLink]="['/auth/login']">Login</a>        
+    <a class="item" *ngIf="(authService.user | async)" (click)="authService.logout()" [routerLink]="['/auth/login']">Logout</a>
+  </div>
 </div>
