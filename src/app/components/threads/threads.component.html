@@ -2,15 +2,23 @@
 <div class="ui grid">
     <div class="row">
         <div class="six wide column">
-            <div class="ui small fluid green card">
-                <div class="content">
-                    <img src="{{ (currentUser | async)?.photoURL }}" alt="Your DP" class="ui mini left floated circular image">
-                    <div class="header">{{ (currentUser | async)?.displayName }}</div>
-                    <div class="meta">** Status **</div>
+            <div class="wrapper">
+                <div class="user-content">
+                    <div class="ui small fluid green card">
+                        <div class="content">
+                            <img src="{{ (currentUser | async)?.photoURL }}" alt="Your DP" class="ui mini left floated circular image">
+                            <div class="header">{{ (currentUser | async)?.displayName }}</div>
+                            <div class="meta">** Status **</div>
+                        </div>
+                    </div>
+                    <div class="ui icon fluid input">
+                        <input placeholder="Search..." type="text">
+                        <i class="inverted circular search link icon"></i>
+                    </div>
                 </div>
-            </div>
-            <div class="threads">
-                
+                <div class="threads">
+                    <lc-thread-list [threads]="threads"></lc-thread-list>
+                </div>
             </div>
         </div>
     </div>

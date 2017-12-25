@@ -17,12 +17,12 @@ import { AuthService } from '../../services/auth/auth.service';
 export class ThreadsComponent implements OnInit {
 
   public currentUser: Observable<firebase.User>;
-  public threadList: Thread[];
+  public threads: Thread[];
 
   constructor(private firestore: AngularFirestore, private authService: AuthService) { }
 
   ngOnInit() {
-    this.threadList = [];
+    this.threads = [];
     this.currentUser = this.authService.user;    
     // Get the current user
     this.authService.user.subscribe((user) => {
@@ -36,7 +36,7 @@ export class ThreadsComponent implements OnInit {
           .valueChanges()
           .subscribe((userDoc: User) => {
             // Assign it to the threadlist
-            this.threadList[index] = {
+            this.threads[index] = {
               thread: thread.thread,
               user: userDoc
             }
