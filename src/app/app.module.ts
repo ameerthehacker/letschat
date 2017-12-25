@@ -19,6 +19,7 @@ import { NavbarComponent } from './components/navbar/navbar.component';
 import { ThreadsComponent } from './components/threads/threads.component';
 import { ThreadListComponent } from './components/threads/thread-list/thread-list.component';
 import { ChatBoxComponent } from './components/threads/chat-box/chat-box.component';
+import { ChatBubbleComponent } from './components/threads/chat-bubble/chat-bubble.component';
 
 
 @NgModule({
@@ -29,7 +30,8 @@ import { ChatBoxComponent } from './components/threads/chat-box/chat-box.compone
     NavbarComponent,
     ThreadsComponent,
     ThreadListComponent,
-    ChatBoxComponent
+    ChatBoxComponent,
+    ChatBubbleComponent
   ],
   imports: [
     BrowserModule,

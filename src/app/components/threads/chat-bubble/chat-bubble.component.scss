@@ -1,0 +1,28 @@
+// Bubble design for sender
+.bubble {
+	color: #212121;
+	background: rgba(236, 240, 241, 0.84);
+	padding: 8px 16px;
+	border-radius: 5px 15px 15px 15px;
+	font-weight: 400;
+	text-transform: none;
+	text-align: left;
+	font-size: 16px;
+	letter-spacing: .5px;
+	margin: 0 0 2px 0;
+	max-width: 65%;
+	float: right;
+	clear: both;
+	line-height: 1.5em;
+	word-break: break-word;
+}
+.bubble.reply {
+	background: rgba(41,128,185, 0.8);
+	color: #fff;
+    border-radius: 15px 15px 5px 5px;
+    float: left;
+    clear: both;
+	cursor: pointer;
+	text-decoration: none;
+	word-break: normal;
+}
