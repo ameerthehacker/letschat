@@ -7,12 +7,14 @@ import { RouterModule } from "@angular/router";
 import { APP_ROUTE } from "../app/routes/app.route";
 import { environment } from "../environments/environment";
 
+import { AuthService } from './services/auth/auth.service';
+import { AuthGuard } from './guards/auth/auth.guard';
+
 import { AppComponent } from './app.component';
 import { LoginComponent } from './components/login/login.component';
 import { HomeComponent } from './components/home/home.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
-import { AuthService } from './services/auth/auth.service';
-import { AuthGuard } from './guards/auth/auth.guard';
+import { ThreadsComponent } from './components/threads/threads.component';
 
 
 @NgModule({
@@ -20,7 +22,8 @@ import { AuthGuard } from './guards/auth/auth.guard';
     AppComponent,
     LoginComponent,
     HomeComponent,
-    NavbarComponent
+    NavbarComponent,
+    ThreadsComponent
   ],
   imports: [
     BrowserModule,

@@ -20,7 +20,7 @@ export class LoginComponent implements OnInit {
     this.authService.login(provider)
     .then((user) => {
       if(user) {
-        this.router.navigate(['/']);        
+        this.router.navigate(['/threads']);        
       }
     })
     .catch((err) => {

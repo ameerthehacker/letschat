@@ -26,7 +26,7 @@ export class AuthService {
       }
       else {
         // Goto home page if logged in
-        this.router.navigate(['/']);
+        this.router.navigate(['/threads']);
       }
     });
   }
