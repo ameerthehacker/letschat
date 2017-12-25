@@ -1,9 +1,9 @@
 <div class="ui cards">
-    <div *ngFor="let thread of threads" class="ui fluid card">
+    <a [routerLink]="['/threads', thread.thread.id]" *ngFor="let thread of threads" class="ui fluid card">
         <div class="content">
             <img src="{{ thread.user.photoURL }}" alt="Your DP" class="ui mini left floated circular image">
             <div class="header">{{ thread.user.displayName }}</div>
             <div class="meta">** Status **</div>
         </div>
-    </div>
+    </a>
 </div>

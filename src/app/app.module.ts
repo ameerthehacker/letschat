@@ -17,6 +17,7 @@ import { HomeComponent } from './components/home/home.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { ThreadsComponent } from './components/threads/threads.component';
 import { ThreadListComponent } from './components/threads/thread-list/thread-list.component';
+import { ChatBoxComponent } from './components/threads/chat-box/chat-box.component';
 
 
 @NgModule({
@@ -26,7 +27,8 @@ import { ThreadListComponent } from './components/threads/thread-list/thread-lis
     HomeComponent,
     NavbarComponent,
     ThreadsComponent,
-    ThreadListComponent
+    ThreadListComponent,
+    ChatBoxComponent
   ],
   imports: [
     BrowserModule,

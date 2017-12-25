@@ -6,16 +6,23 @@
 input {
     border-radius: 0px !important;
 }
+
 .user-content {
     flex: 0 0 auto;
 }
+
 .threads {
     flex: 1 1 auto;
     overflow-y: auto;
 }
+
 .wrapper {
     display: flex;
     flex-direction: column;
     height: 92vh;
     border: 1px solid #ecf0f1;
+}
+
+.column {
+    padding: 0 !important;
 }
