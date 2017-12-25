@@ -13,6 +13,7 @@ export class ChatBoxComponent implements OnInit {
 
   message: string;
   threadId: string;
+  messages: any[];
 
   constructor(private route: ActivatedRoute, 
     private firestore: AngularFirestore,
@@ -22,6 +23,19 @@ export class ChatBoxComponent implements OnInit {
     this.message = "";
     this.route.params.subscribe((params) => {
       this.threadId = params.thread_id;
+      // Load the messages
+      let messagesPath = `/threads/${this.threadId}/messages`;
+      this.firestore.collection(messagesPath)
+      .ref
+      .orderBy('timestamp', 'desc')
+      .limit(20)
+      .onSnapshot((snap) => {
+        let messages = [];        
+        snap.docs.forEach((message: any) => {
+          messages.push(message.data());
+        });
+        this.messages = messages.reverse();
+      });
     });
   }
   onBtnSendClick() {
@@ -33,7 +47,7 @@ export class ChatBoxComponent implements OnInit {
       let message = {
         sender: senderRef,
         message: this.message,
-        timestamp: -Date.now()
+        timestamp: Date.now()
       }
       this.message = "";
       this.firestore.collection(messagesPath)

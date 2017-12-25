@@ -31,17 +31,20 @@ export class ThreadsComponent implements OnInit {
       .valueChanges()
       .subscribe((userDoc: any) => {
         let threads = userDoc.threads;
-        threads.forEach((thread, index) => {
-          this.firestore.doc(thread.user.path)
-          .valueChanges()
-          .subscribe((userDoc: User) => {
-            // Assign it to the threadlist
-            this.threads[index] = {
-              thread: thread.thread,
-              user: userDoc
-            }
-          });
-        });
+        // Check if user has any threads
+        if(threads) {
+          threads.forEach((thread, index) => {
+            this.firestore.doc(thread.user.path)
+            .valueChanges()
+            .subscribe((userDoc: User) => {
+              // Assign it to the threadlist
+              this.threads[index] = {
+                thread: thread.thread,
+                user: userDoc
+              }
+            });
+          }); 
+        }
       });
     });
     

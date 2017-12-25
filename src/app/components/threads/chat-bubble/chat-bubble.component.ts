@@ -21,7 +21,7 @@ export class ChatBubbleComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
-    this.time = date.format(new Date(this.timestamp * 1000), 'HH:mm');
+    this.time = date.format(new Date(this.timestamp), 'HH:mm');
   }
 
 }
