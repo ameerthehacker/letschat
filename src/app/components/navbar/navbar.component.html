@@ -1,7 +1,11 @@
 <div class="ui fixed massive menu">
+  <div class="item">
+    <img src="/assets/images/logo.png" alt="Logo">
+  </div>
   <a [routerLink]="['/']" class="item">LetsChat</a>    
   <div class="right menu">
-    <a class="item" *ngIf="!(authService.user | async)" [routerLink]="['/auth/login']">Login</a>        
+    <a class="item" *ngIf="!(authService.user | async)" [routerLink]="['/auth/login']">Login</a>
+    <a class="item" *ngIf="(authService.user | async)" [routerLink]="['/people']">People</a>          
     <a class="item" *ngIf="(authService.user | async)" (click)="authService.logout()" [routerLink]="['/auth/login']">Logout</a>
   </div>
 </div>

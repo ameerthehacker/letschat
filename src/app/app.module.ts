@@ -20,6 +20,8 @@ import { ThreadsComponent } from './components/threads/threads.component';
 import { ThreadListComponent } from './components/threads/thread-list/thread-list.component';
 import { ChatBoxComponent } from './components/threads/chat-box/chat-box.component';
 import { ChatBubbleComponent } from './components/threads/chat-bubble/chat-bubble.component';
+import { UserComponent } from './components/user/user.component';
+import { PeopleComponent } from './components/people/people.component';
 
 
 @NgModule({
@@ -31,7 +33,9 @@ import { ChatBubbleComponent } from './components/threads/chat-bubble/chat-bubbl
     ThreadsComponent,
     ThreadListComponent,
     ChatBoxComponent,
-    ChatBubbleComponent
+    ChatBubbleComponent,
+    UserComponent,
+    PeopleComponent
   ],
   imports: [
     BrowserModule,
