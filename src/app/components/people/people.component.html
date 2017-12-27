@@ -1,5 +1,8 @@
 <lc-navbar></lc-navbar>
 <div class="ui grid wrapper">
+  <div class="ui inverted active dimmer" *ngIf="loadingPeople">
+    <div class="ui massive text loader">Loading...</div>
+  </div>
   <div class="row">
     <div *ngFor="let user of people" class="four wide column">
       <lc-user (onAddClick)="onAddClick($event)" [user]="user"></lc-user> 

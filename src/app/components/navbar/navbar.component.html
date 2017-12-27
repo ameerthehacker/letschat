@@ -1,9 +1,9 @@
 <div class="ui massive menu">
-  <a [routerLink]="['/']" class="item"><i class="fa fa-wechat"></i> &nbsp;  LetsChat</a>
+  <a [routerLink]="['/']" class="item"><i class="fa fa-commenting"></i> &nbsp;  LetsChat</a>
   <div class="right menu">
     <a class="item" *ngIf="!(authService.user | async)" [routerLink]="['/']" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }"><i class="fa fa-home"></i> &nbsp; Home</a>
     <a class="item" *ngIf="!(authService.user | async)" [routerLink]="['/auth/login']" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }"><i class="fa fa-sign-in"></i> &nbsp; Login</a>
-    <a class="item" *ngIf="(authService.user | async)" [routerLink]="['/threads']" routerLinkActive="active"><i class="fa fa-commenting"></i> &nbsp; Threads</a>        
+    <a class="item" *ngIf="(authService.user | async)" [routerLink]="['/threads']" routerLinkActive="active"><i class="fa fa-comment"></i> &nbsp; Threads</a>        
     <a class="item" *ngIf="(authService.user | async)" [routerLink]="['/people']" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: false }"><i class="fa fa-users"></i> &nbsp; People</a>      
     <a class="item" *ngIf="(authService.user | async)" (click)="authService.logout()" [routerLink]="['/auth/login']"><i class="fa fa-sign-out" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }"></i> &nbsp; Logout</a>
   </div>

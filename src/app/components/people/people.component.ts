@@ -15,13 +15,15 @@ import { AuthService } from '../../services/auth/auth.service';
 })
 export class PeopleComponent implements OnInit {
 
-  people: User[];
+  public people: User[];
+  public loadingPeople: boolean = false;
 
   constructor(private firestore: AngularFirestore,
     private router: Router,
     private authService: AuthService) { }
 
   ngOnInit() {
+    this.loadingPeople = true;
     this.firestore.collection('/users')
     .snapshotChanges()
     .map((changes) => {
@@ -38,6 +40,7 @@ export class PeopleComponent implements OnInit {
           return;
         }
       });
+      this.loadingPeople = false;      
       this.people = users;
     });
   }
