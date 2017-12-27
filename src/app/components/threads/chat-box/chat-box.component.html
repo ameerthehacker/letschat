@@ -1,4 +1,7 @@
 <div class="ui grid">
+  <div *ngIf="loadingMessages" class="ui active inverted dimmer">
+    <div class="ui text loader">Loading Messages...</div>
+  </div>
   <div class="row">
     <div class="sixteen wide column">
       <div #messageBox class="message-box">

@@ -19,11 +19,13 @@ export class ThreadsComponent implements OnInit {
   public currentUser: Observable<firebase.User>;
   public status: string;
   public threads: Thread[];
+  public loadingThreads: boolean = false;
 
   constructor(private firestore: AngularFirestore, private authService: AuthService) { }
 
   ngOnInit() {
     this.threads = [];
+    this.loadingThreads = true;
     this.currentUser = this.authService.user;    
     // Get the current user
     this.authService.user.subscribe((user) => {
@@ -33,6 +35,7 @@ export class ThreadsComponent implements OnInit {
       .subscribe((userDoc: any) => {
         this.status = userDoc.status;
         let threads = userDoc.threads;
+        this.loadingThreads = false;
         // Check if user has any threads
         if(threads) {
           threads.forEach((thread, index) => {

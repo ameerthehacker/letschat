@@ -17,13 +17,14 @@ declare var $: any;
 export class ChatBoxComponent implements OnInit {
 
   @ViewChild('messageBox')
-  messageBox: ElementRef;
-  message: string;
-  threadId: string;
-  messages: any[];
-  showOldMessages: boolean = false;
-  messagesLimit: number;
-  loadingOldMessages: boolean = false;
+  public messageBox: ElementRef;
+  public message: string;
+  public threadId: string;
+  public messages: any[];
+  public showOldMessages: boolean = false;
+  public messagesLimit: number;
+  public loadingOldMessages: boolean = false;
+  public loadingMessages: boolean = false;
 
   constructor(private route: ActivatedRoute, 
     private firestore: AngularFirestore,
@@ -35,6 +36,7 @@ export class ChatBoxComponent implements OnInit {
     this.messagesLimit = 20;
     this.route.params.subscribe((params) => {
       this.threadId = params.thread_id;
+      this.loadingMessages = true;
       this.loadMessages(this.threadId, this.messagesLimit, (messages) => {
         this.messages = messages;
         this.scrollToBottom();
@@ -44,6 +46,7 @@ export class ChatBoxComponent implements OnInit {
         else {
           this.showOldMessages = false;          
         }
+        this.loadingMessages = false;        
       });
     });
   }

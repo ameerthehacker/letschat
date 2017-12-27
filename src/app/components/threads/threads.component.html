@@ -1,5 +1,8 @@
 <lc-navbar></lc-navbar>
 <div class="ui grid">
+    <div *ngIf="loadingThreads" class="ui active inverted dimmer">
+        <div class="ui text  massive loader">Loading...</div>
+    </div>
     <div class="row">
         <div class="six wide column">
             <div class="wrapper">
