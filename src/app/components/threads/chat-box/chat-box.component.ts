@@ -63,6 +63,13 @@ export class ChatBoxComponent implements OnInit {
       });
     }
   }
+  onKeyPress(evt) {
+    // Enter is pressed
+    if(evt.keyCode == 13) {
+      // Trigger message sending
+      this.onBtnSendClick();
+    }
+  }
   private scrollToBottom() {
     setTimeout(() => this.messageBox.nativeElement.scrollTop = this.messageBox.nativeElement.scrollHeight, 500);
   }
