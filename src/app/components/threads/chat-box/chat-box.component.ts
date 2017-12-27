@@ -1,4 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, 
+  OnInit, 
+  ViewChild,
+  ElementRef } from '@angular/core';
 import { ActivatedRoute } from "@angular/router";
 import { AngularFirestore } from "angularfire2/firestore";
 import * as firebase from 'firebase';
@@ -11,6 +14,8 @@ import { AuthService } from '../../../services/auth/auth.service';
 })
 export class ChatBoxComponent implements OnInit {
 
+  @ViewChild('messageBox')
+  messageBox: ElementRef;
   message: string;
   threadId: string;
   messages: any[];
@@ -35,6 +40,7 @@ export class ChatBoxComponent implements OnInit {
           messages.push(message.data());
         });
         this.messages = messages.reverse();
+        this.scrollToBottom();
       });
     });
   }
@@ -56,6 +62,9 @@ export class ChatBoxComponent implements OnInit {
         console.log(err);
       });
     }
+  }
+  private scrollToBottom() {
+    setTimeout(() => this.messageBox.nativeElement.scrollTop = this.messageBox.nativeElement.scrollHeight, 500);
   }
 
 }
