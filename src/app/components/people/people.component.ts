@@ -25,11 +25,17 @@ export class PeopleComponent implements OnInit {
     .map((changes) => {
       return changes.map((snap) => {
         let user = snap.payload.doc.data();
-        user.id = snap.payload.doc.id;
+        user.uid = snap.payload.doc.id;
         return user;
       });
     })
     .subscribe((users: User[]) => {
+      users.forEach((user: User , index) => {
+        if(user.uid == this.authService.currentUser.uid) {
+          users.splice(index, 1);
+          return;
+        }
+      });
       this.people = users;
     });
   }
@@ -47,13 +53,13 @@ export class PeopleComponent implements OnInit {
       let currentUserRef = this.firestore.doc(`/users/${this.authService.currentUser.uid}`).ref;
       // Update the threads
       threads.push({ thread: newThreadRef, user: currentUserRef });
-      this.firestore.doc(`/users/${user.id}`)
+      this.firestore.doc(`/users/${user.uid}`)
       .update({
         threads: threads
       })
       // Add the thread to the current user
       threads = currentUser.threads || [];
-      let userRef = this.firestore.doc(`/users/${user.id}`).ref;
+      let userRef = this.firestore.doc(`/users/${user.uid}`).ref;
       // Update the threads
       threads.push({ thread: newThreadRef, user: userRef });
       this.firestore.doc(`/users/${this.authService.currentUser.uid}`)
