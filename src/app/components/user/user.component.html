@@ -4,7 +4,7 @@
       <div class="header">{{ user.displayName }}</div>
       <div class="meta">{{ user.status }}</div>
   </div>
-  <div (click)="onBtnAddClick(user)" class="ui bottom attached button">
+  <div (click)="onBtnAddClick(user)" [ngClass]="{ loading: addingUser }" class="ui bottom attached button">
       <i class="fa fa-plus"></i>
       Add Thread
   </div>
