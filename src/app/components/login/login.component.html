@@ -7,7 +7,7 @@
         <div class="ui secondary segment">
           <h1 class="text-center"><i class="fa fa-user"></i> &nbsp;Login</h1>
         </div> 
-        <div class="ui segment">
+        <div class="ui {{ loadingUser ? 'loading': '' }} segment">
           <div class="margin-top-10">
             <button class="ui fluid facebook massive button" (click)="onBtnLoginClick(authProviders.FACEBOOK)"><i class="fa fa-facebook-square"></i> &nbsp; Login With Facebook</button>
           </div>

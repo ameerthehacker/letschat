@@ -9,12 +9,19 @@ import { Router } from '@angular/router';
 })
 export class LoginComponent implements OnInit {
 
+  public loadingUser: boolean = false;
+
   public authProviders = AuthService.providers;
 
   constructor(private authService: AuthService, 
     private router: Router) { }
 
   ngOnInit() {
+    this.loadingUser = true;
+    this.authService.user
+    .subscribe((user) => {
+      this.loadingUser = false;
+    });
   }
   onBtnLoginClick(provider) {
     this.authService.login(provider)
