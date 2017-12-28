@@ -526,6 +526,9 @@ var ChatBoxComponent = (function () {
             });
         });
     };
+    ChatBoxComponent.prototype.ngOnDestroy = function () {
+        this.messagesListener();
+    };
     ChatBoxComponent.prototype.onBtnOldMessagesClick = function () {
         var _this = this;
         this.messagesLimit += 10;
