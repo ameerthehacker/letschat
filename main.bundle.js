@@ -527,7 +527,9 @@ var ChatBoxComponent = (function () {
         });
     };
     ChatBoxComponent.prototype.ngOnDestroy = function () {
-        this.messagesListener();
+        if (this.messagesListener) {
+            this.messagesListener();
+        }
     };
     ChatBoxComponent.prototype.onBtnOldMessagesClick = function () {
         var _this = this;
