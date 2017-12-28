@@ -54,7 +54,8 @@ export class ThreadsComponent implements OnInit {
               this.threads[index] = {
                 thread: thread.thread,
                 user: userDoc,
-                newMessagesCount: 0
+                newMessagesCount: 0,
+                lastMessage: ''
               }
               // Look for new messages
               this.firestore.collection(`/threads/${thread.thread.id}/messages`)
@@ -63,6 +64,9 @@ export class ThreadsComponent implements OnInit {
               .where('read', '==', false)
               .onSnapshot((snap) => {
                 this.threads[index].newMessagesCount = snap.docs.length;
+                if(snap.docs.length > 0) {
+                  this.threads[index].lastMessage = snap.docs[snap.docs.length - 1].data().message;
+                }
               });
               // Set each user online status
               this.onlineStatus(userDoc, (status) => {

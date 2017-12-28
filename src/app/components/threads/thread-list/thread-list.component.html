@@ -7,7 +7,7 @@
             <div class="meta" *ngIf="thread.newMessagesCount > 0">
                 <div class="statistic">
                     <div class="value">
-                        <i class="fa fa-comments-o"></i> {{ thread.newMessagesCount }} unread
+                        <i class="fa fa-comments-o"></i> {{ thread.newMessagesCount }} {{ thread.lastMessage }}
                     </div>
                 </div>
             </div>
