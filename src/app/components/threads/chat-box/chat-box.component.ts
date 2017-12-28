@@ -5,6 +5,7 @@ import { Component,
 import { ActivatedRoute } from "@angular/router";
 import { AngularFirestore } from "angularfire2/firestore";
 import * as firebase from 'firebase';
+
 import { AuthService } from '../../../services/auth/auth.service';
 
 declare var $: any;
@@ -25,6 +26,7 @@ export class ChatBoxComponent implements OnInit {
   public messagesLimit: number;
   public loadingOldMessages: boolean = false;
   public loadingMessages: boolean = false;
+  public messagesListener;
 
   constructor(private route: ActivatedRoute, 
     private firestore: AngularFirestore,
@@ -35,6 +37,8 @@ export class ChatBoxComponent implements OnInit {
     // Start with 20 messages    
     this.messagesLimit = 20;
     this.route.params.subscribe((params) => {
+      // unsubscribe previous thread
+      if(this.messagesListener) { this.messagesListener() }
       this.threadId = params.thread_id;
       this.loadingMessages = true;
       this.loadMessages(this.threadId, this.messagesLimit, (messages) => {
@@ -73,7 +77,8 @@ export class ChatBoxComponent implements OnInit {
       let message = {
         sender: senderRef,
         message: this.message,
-        timestamp: Date.now()
+        timestamp: Date.now(),
+        read: false
       }
       this.message = "";
       this.firestore.collection(messagesPath)
@@ -96,9 +101,9 @@ export class ChatBoxComponent implements OnInit {
     let querySnap = this.firestore.collection(messagesPath)
     .ref
     .orderBy('timestamp', 'desc')
-    .limit(messagesSize);
+    .limit(messagesSize)
     if(!once) {
-      querySnap
+      this.messagesListener = querySnap
       .onSnapshot((snap) => {
         let messages = [];        
         snap.docs.forEach((message: any) => {

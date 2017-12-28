@@ -53,8 +53,17 @@ export class ThreadsComponent implements OnInit {
               // Assign it to the threadlist
               this.threads[index] = {
                 thread: thread.thread,
-                user: userDoc
+                user: userDoc,
+                newMessagesCount: 0
               }
+              // Look for new messages
+              this.firestore.collection(`/threads/${thread.thread.id}/messages`)
+              .ref
+              .where('sender', '==', thread.user)
+              .where('read', '==', false)
+              .onSnapshot((snap) => {
+                this.threads[index].newMessagesCount = snap.docs.length;
+              });
               // Set each user online status
               this.onlineStatus(userDoc, (status) => {
                 // Return if the user record is not yet created in firebase
