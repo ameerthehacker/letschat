@@ -1,5 +1,5 @@
 <div class="ui cards">
-    <a routerLinkActive="selected-card" [routerLink]="['/threads', thread.thread.id]" *ngFor="let thread of threads" class="ui fluid card">
+    <a (click)="onThreadClick(thread.user)" routerLinkActive="selected-card" [routerLink]="['/threads', thread.thread.id]" *ngFor="let thread of threads" class="ui fluid card">
         <div class="content">
             <i [ngClass]="{ red: !thread.user.online, green: thread.user.online }" class="pull-right fa fa fa-circle"></i>
             <img src="{{ thread.user.photoURL }}" alt="Your DP" class="ui mini left floated circular image">

@@ -1,8 +1,11 @@
 import { Component, 
   OnInit, 
-  Input } from '@angular/core';
+  Input,
+  EventEmitter, 
+  Output } from '@angular/core';
 
 import { Thread } from "../../../models/thread";
+import { User } from '../../../models/user';
 
 @Component({
   selector: 'lc-thread-list',
@@ -11,12 +14,17 @@ import { Thread } from "../../../models/thread";
 })
 export class ThreadListComponent implements OnInit {
 
+  @Output()
+  public select: EventEmitter<User> = new EventEmitter<User>();
   @Input()
-  threads: Thread[];
+  public threads: Thread[];
 
   constructor() { }
 
   ngOnInit() {
+  }
+  onThreadClick(user) {
+    this.select.emit(user);
   }
 
 }

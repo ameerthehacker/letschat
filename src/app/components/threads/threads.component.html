@@ -20,11 +20,18 @@
                     </div>
                 </div>
                 <div class="threads">
-                    <lc-thread-list [threads]="threads"></lc-thread-list>
+                    <lc-thread-list (select)="onThreadClick($event)" [threads]="threads"></lc-thread-list>
                 </div>
             </div>
         </div>
         <div class="ten wide column">
+            <div *ngIf="threadUser" class="ui small fluid yellow card">
+                <div class="content">
+                    <img src="{{ threadUser.photoURL }}" alt="{{ threadUser.displayName }}'s DP'" class="ui mini left floated circular image">
+                    <div class="header">{{ threadUser.displayName }}</div>
+                    <div class="meta">{{ threadUser.status }}</div>
+                </div>
+            </div>
             <router-outlet></router-outlet>
         </div>
     </div>

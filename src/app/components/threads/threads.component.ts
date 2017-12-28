@@ -21,6 +21,7 @@ export class ThreadsComponent implements OnInit {
   public status: string;
   public threads: Thread[];
   public loadingThreads: boolean = false;
+  public threadUser: User;
 
   constructor(private firestore: AngularFirestore, 
     private firedatabase: AngularFireDatabase,
@@ -75,6 +76,9 @@ export class ThreadsComponent implements OnInit {
     .on('value', (snap) => {
       callback(snap.val());
     });
+  }
+  onThreadClick(user) {
+    this.threadUser = user;
   }
 
 }
