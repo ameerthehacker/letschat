@@ -1,5 +1,6 @@
 import { Component, 
-  OnInit, 
+  OnInit,
+  OnDestroy,
   ViewChild,
   ElementRef } from '@angular/core';
 import { ActivatedRoute } from "@angular/router";
@@ -16,7 +17,7 @@ declare var $: any;
   templateUrl: './chat-box.component.html',
   styleUrls: ['./chat-box.component.scss']
 })
-export class ChatBoxComponent implements OnInit {
+export class ChatBoxComponent implements OnInit, OnDestroy {
 
   @ViewChild('messageBox')
   public messageBox: ElementRef;
@@ -55,6 +56,11 @@ export class ChatBoxComponent implements OnInit {
         this.loadingMessages = false;        
       });
     });
+  }
+  ngOnDestroy() {
+    if(this.messagesListener) {
+      this.messagesListener();      
+    }
   }
   onBtnOldMessagesClick() {
     this.messagesLimit += 10;
