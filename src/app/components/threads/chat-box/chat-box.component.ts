@@ -4,6 +4,7 @@ import { Component,
   ElementRef } from '@angular/core';
 import { ActivatedRoute } from "@angular/router";
 import { AngularFirestore } from "angularfire2/firestore";
+import { AngularFireDatabase } from "angularfire2/database";
 import * as firebase from 'firebase';
 
 import { AuthService } from '../../../services/auth/auth.service';
@@ -29,6 +30,7 @@ export class ChatBoxComponent implements OnInit {
   public messagesListener;
 
   constructor(private route: ActivatedRoute, 
+    private firedatabase: AngularFireDatabase,
     private firestore: AngularFirestore,
     private authService: AuthService) { }
 
@@ -94,6 +96,20 @@ export class ChatBoxComponent implements OnInit {
       // Trigger message sending
       this.onBtnSendClick();
     }
+    this.firedatabase.database
+    .ref(`/users/${this.authService.currentUser.uid}`)
+    .update({ typing: true })
+    .then(() => {
+      setTimeout(() => {
+        this.firedatabase.database
+        .ref(`/users/${this.authService.currentUser.uid}`)
+        .update({ typing: false })
+      }, 1000);
+    });
+    this.firedatabase.database
+    .ref(`/users/${this.authService.currentUser.uid}`)
+    .onDisconnect()
+    .update({ typing: false });
   }
   private loadMessages(threadId, messagesSize, callback, once = false) {
     // Load the messages

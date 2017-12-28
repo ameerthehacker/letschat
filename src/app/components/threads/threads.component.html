@@ -27,7 +27,8 @@
                 <div class="content">
                     <img src="{{ threadUser.photoURL }}" alt="{{ threadUser.displayName }}'s DP'" class="ui mini left floated circular image">
                     <div class="header">{{ threadUser.displayName }}</div>
-                    <div class="meta">{{ threadUser.online ? 'Online': threadUser.lastSeenInWords }}</div>
+                    <div *ngIf="!threadUser.typing" class="meta">{{ threadUser.online ? 'Online': threadUser.lastSeenInWords }}</div>
+                    <div *ngIf="threadUser.typing" class="typing meta">typing...</div>                    
                 </div>
             </div>
             <router-outlet></router-outlet>

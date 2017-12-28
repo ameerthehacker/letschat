@@ -24,6 +24,7 @@ export class ThreadsComponent implements OnInit {
   public threads: Thread[];
   public loadingThreads: boolean = false;
   public threadUser: User;
+  public typingListener;
 
   constructor(private firestore: AngularFirestore, 
     private firedatabase: AngularFireDatabase,
@@ -99,7 +100,15 @@ export class ThreadsComponent implements OnInit {
     });
   }
   onThreadClick(user) {
+    if(this.typingListener) {
+      this.typingListener();
+    }
     this.threadUser = user;
+    this.typingListener = this.firedatabase.database
+    .ref(`/users/${user.uid}`)
+    .on('value', (snap) => {
+      this.threadUser.typing = snap.val().typing;
+    });
   }
 
 }

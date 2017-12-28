@@ -7,4 +7,5 @@ export class User {
     public online: boolean;
     public lastSeen: number;
     public lastSeenInWords: string;
+    public typing: boolean;
 }
