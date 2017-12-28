@@ -42,6 +42,7 @@ export class ThreadsComponent implements OnInit {
       this.firestore.doc(`users/${user.uid}`)
       .valueChanges()
       .subscribe((userDoc: any) => {
+        if(!userDoc) { return; }
         this.status = userDoc.status;
         let threads = userDoc.threads;
         this.loadingThreads = false;
