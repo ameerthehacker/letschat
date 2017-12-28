@@ -4,4 +4,6 @@ export class User {
     public email: string;
     public photoURL: string;
     public threads: Object[];
+    public online: boolean;
+    public lastSeen: number;
 }
