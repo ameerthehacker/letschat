@@ -83,22 +83,23 @@ var AppComponent = (function () {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_angularfire2__ = __webpack_require__("../../../../angularfire2/index.js");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_angularfire2_auth__ = __webpack_require__("../../../../angularfire2/auth/index.js");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_angularfire2_firestore__ = __webpack_require__("../../../../angularfire2/firestore/index.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__angular_router__ = __webpack_require__("../../../router/esm5/router.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__angular_forms__ = __webpack_require__("../../../forms/esm5/forms.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__app_routes_app_route__ = __webpack_require__("../../../../../src/app/routes/app.route.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__environments_environment__ = __webpack_require__("../../../../../src/environments/environment.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__services_auth_auth_service__ = __webpack_require__("../../../../../src/app/services/auth/auth.service.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__guards_auth_auth_guard__ = __webpack_require__("../../../../../src/app/guards/auth/auth.guard.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__app_component__ = __webpack_require__("../../../../../src/app/app.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_12__components_login_login_component__ = __webpack_require__("../../../../../src/app/components/login/login.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_13__components_home_home_component__ = __webpack_require__("../../../../../src/app/components/home/home.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_14__components_navbar_navbar_component__ = __webpack_require__("../../../../../src/app/components/navbar/navbar.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_15__components_threads_threads_component__ = __webpack_require__("../../../../../src/app/components/threads/threads.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_16__components_threads_thread_list_thread_list_component__ = __webpack_require__("../../../../../src/app/components/threads/thread-list/thread-list.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_17__components_threads_chat_box_chat_box_component__ = __webpack_require__("../../../../../src/app/components/threads/chat-box/chat-box.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_18__components_threads_chat_bubble_chat_bubble_component__ = __webpack_require__("../../../../../src/app/components/threads/chat-bubble/chat-bubble.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_19__components_user_user_component__ = __webpack_require__("../../../../../src/app/components/user/user.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_20__components_people_people_component__ = __webpack_require__("../../../../../src/app/components/people/people.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5_angularfire2_database__ = __webpack_require__("../../../../angularfire2/database/index.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__angular_router__ = __webpack_require__("../../../router/esm5/router.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__angular_forms__ = __webpack_require__("../../../forms/esm5/forms.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__app_routes_app_route__ = __webpack_require__("../../../../../src/app/routes/app.route.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__environments_environment__ = __webpack_require__("../../../../../src/environments/environment.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__services_auth_auth_service__ = __webpack_require__("../../../../../src/app/services/auth/auth.service.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__guards_auth_auth_guard__ = __webpack_require__("../../../../../src/app/guards/auth/auth.guard.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_12__app_component__ = __webpack_require__("../../../../../src/app/app.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_13__components_login_login_component__ = __webpack_require__("../../../../../src/app/components/login/login.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_14__components_home_home_component__ = __webpack_require__("../../../../../src/app/components/home/home.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_15__components_navbar_navbar_component__ = __webpack_require__("../../../../../src/app/components/navbar/navbar.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_16__components_threads_threads_component__ = __webpack_require__("../../../../../src/app/components/threads/threads.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_17__components_threads_thread_list_thread_list_component__ = __webpack_require__("../../../../../src/app/components/threads/thread-list/thread-list.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_18__components_threads_chat_box_chat_box_component__ = __webpack_require__("../../../../../src/app/components/threads/chat-box/chat-box.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_19__components_threads_chat_bubble_chat_bubble_component__ = __webpack_require__("../../../../../src/app/components/threads/chat-bubble/chat-bubble.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_20__components_user_user_component__ = __webpack_require__("../../../../../src/app/components/user/user.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_21__components_people_people_component__ = __webpack_require__("../../../../../src/app/components/people/people.component.ts");
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -126,36 +127,38 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 
 
 
+
 var AppModule = (function () {
     function AppModule() {
     }
     AppModule = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_1__angular_core__["I" /* NgModule */])({
             declarations: [
-                __WEBPACK_IMPORTED_MODULE_11__app_component__["a" /* AppComponent */],
-                __WEBPACK_IMPORTED_MODULE_12__components_login_login_component__["a" /* LoginComponent */],
-                __WEBPACK_IMPORTED_MODULE_13__components_home_home_component__["a" /* HomeComponent */],
-                __WEBPACK_IMPORTED_MODULE_14__components_navbar_navbar_component__["a" /* NavbarComponent */],
-                __WEBPACK_IMPORTED_MODULE_15__components_threads_threads_component__["a" /* ThreadsComponent */],
-                __WEBPACK_IMPORTED_MODULE_16__components_threads_thread_list_thread_list_component__["a" /* ThreadListComponent */],
-                __WEBPACK_IMPORTED_MODULE_17__components_threads_chat_box_chat_box_component__["a" /* ChatBoxComponent */],
-                __WEBPACK_IMPORTED_MODULE_18__components_threads_chat_bubble_chat_bubble_component__["a" /* ChatBubbleComponent */],
-                __WEBPACK_IMPORTED_MODULE_19__components_user_user_component__["a" /* UserComponent */],
-                __WEBPACK_IMPORTED_MODULE_20__components_people_people_component__["a" /* PeopleComponent */]
+                __WEBPACK_IMPORTED_MODULE_12__app_component__["a" /* AppComponent */],
+                __WEBPACK_IMPORTED_MODULE_13__components_login_login_component__["a" /* LoginComponent */],
+                __WEBPACK_IMPORTED_MODULE_14__components_home_home_component__["a" /* HomeComponent */],
+                __WEBPACK_IMPORTED_MODULE_15__components_navbar_navbar_component__["a" /* NavbarComponent */],
+                __WEBPACK_IMPORTED_MODULE_16__components_threads_threads_component__["a" /* ThreadsComponent */],
+                __WEBPACK_IMPORTED_MODULE_17__components_threads_thread_list_thread_list_component__["a" /* ThreadListComponent */],
+                __WEBPACK_IMPORTED_MODULE_18__components_threads_chat_box_chat_box_component__["a" /* ChatBoxComponent */],
+                __WEBPACK_IMPORTED_MODULE_19__components_threads_chat_bubble_chat_bubble_component__["a" /* ChatBubbleComponent */],
+                __WEBPACK_IMPORTED_MODULE_20__components_user_user_component__["a" /* UserComponent */],
+                __WEBPACK_IMPORTED_MODULE_21__components_people_people_component__["a" /* PeopleComponent */]
             ],
             imports: [
                 __WEBPACK_IMPORTED_MODULE_0__angular_platform_browser__["a" /* BrowserModule */],
-                __WEBPACK_IMPORTED_MODULE_2_angularfire2__["a" /* AngularFireModule */].initializeApp(__WEBPACK_IMPORTED_MODULE_8__environments_environment__["a" /* environment */].firebaseConfig),
+                __WEBPACK_IMPORTED_MODULE_2_angularfire2__["a" /* AngularFireModule */].initializeApp(__WEBPACK_IMPORTED_MODULE_9__environments_environment__["a" /* environment */].firebaseConfig),
                 __WEBPACK_IMPORTED_MODULE_3_angularfire2_auth__["b" /* AngularFireAuthModule */],
                 __WEBPACK_IMPORTED_MODULE_4_angularfire2_firestore__["b" /* AngularFirestoreModule */],
-                __WEBPACK_IMPORTED_MODULE_6__angular_forms__["a" /* FormsModule */],
-                __WEBPACK_IMPORTED_MODULE_5__angular_router__["c" /* RouterModule */].forRoot(__WEBPACK_IMPORTED_MODULE_7__app_routes_app_route__["a" /* APP_ROUTE */])
+                __WEBPACK_IMPORTED_MODULE_7__angular_forms__["a" /* FormsModule */],
+                __WEBPACK_IMPORTED_MODULE_5_angularfire2_database__["b" /* AngularFireDatabaseModule */],
+                __WEBPACK_IMPORTED_MODULE_6__angular_router__["c" /* RouterModule */].forRoot(__WEBPACK_IMPORTED_MODULE_8__app_routes_app_route__["a" /* APP_ROUTE */])
             ],
             providers: [
-                __WEBPACK_IMPORTED_MODULE_9__services_auth_auth_service__["a" /* AuthService */],
-                __WEBPACK_IMPORTED_MODULE_10__guards_auth_auth_guard__["a" /* AuthGuard */]
+                __WEBPACK_IMPORTED_MODULE_10__services_auth_auth_service__["a" /* AuthService */],
+                __WEBPACK_IMPORTED_MODULE_11__guards_auth_auth_guard__["a" /* AuthGuard */]
             ],
-            bootstrap: [__WEBPACK_IMPORTED_MODULE_11__app_component__["a" /* AppComponent */]]
+            bootstrap: [__WEBPACK_IMPORTED_MODULE_12__app_component__["a" /* AppComponent */]]
         })
     ], AppModule);
     return AppModule;
@@ -420,7 +423,7 @@ var PeopleComponent = (function () {
         });
     };
     PeopleComponent.prototype.onAddClick = function (threadId) {
-        this.router.navigate(['/threads', threadId]);
+        this.router.navigate(['/threads']);
     };
     PeopleComponent = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
@@ -442,7 +445,7 @@ var PeopleComponent = (function () {
 /***/ "../../../../../src/app/components/threads/chat-box/chat-box.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"ui grid\">\n  <div *ngIf=\"loadingMessages\" class=\"ui active inverted dimmer\">\n    <div class=\"ui text loader\">Loading Messages...</div>\n  </div>\n  <div class=\"row\">\n    <div class=\"sixteen wide column\">\n      <div #messageBox class=\"message-box\">\n        <div *ngIf=\"showOldMessages\" class=\"old-messages-container\">\n            <button [ngClass]=\"{ loading: loadingOldMessages }\" (click)=\"onBtnOldMessagesClick()\" class=\"ui tiny primary button\" [disabled]=\"loadingOldMessages\"><i class=\"fa fa-arrow-circle-o-up\"></i> &nbsp; Old Messages</button>\n        </div>\n        <lc-chat-bubble *ngFor=\"let message of messages\" [isReply]=\"authService.currentUser.uid != message.sender.id\" [message]=\"message.message\" [timestamp]=\"message.timestamp\"></lc-chat-bubble>\n      </div>\n    </div>\n    <div class=\"sixteen wide column\">\n      <div class=\"chat-controls\">\n        <div class=\"ui right action fluid input\">\n          <input [(ngModel)]=\"message\" type=\"text\" (keypress)=\"onKeyPress($event)\" placeholder=\"Enter the message here :)\">\n          <button (click)=\"onBtnSendClick()\" [disabled]=\"message.length == 0\" class=\"ui icon button positive\">\n              <i class=\"send icon\"></i>\n          </button>   \n        </div>\n      </div>\n    </div>\n  </div>\n</div>"
+module.exports = "<div class=\"ui grid\">\n  <div *ngIf=\"loadingMessages\" class=\"ui active inverted dimmer\">\n    <div class=\"ui text loader\">Loading Messages...</div>\n  </div>\n  <div class=\"row\">\n    <div class=\"sixteen wide column\">\n      <div #messageBox class=\"message-box\">\n        <div *ngIf=\"showOldMessages\" class=\"old-messages-container\">\n            <button [ngClass]=\"{ loading: loadingOldMessages }\" (click)=\"onBtnOldMessagesClick()\" class=\"ui tiny primary button\" [disabled]=\"loadingOldMessages\"><i class=\"fa fa-arrow-circle-o-up\"></i> &nbsp; Old Messages</button>\n        </div>\n        <lc-chat-bubble *ngFor=\"let message of messages\" [isRead]=\"message.read\" [isReply]=\"authService.currentUser.uid != message.sender.id\" [message]=\"message.message\" [timestamp]=\"message.timestamp\"></lc-chat-bubble>\n      </div>\n    </div>\n    <div class=\"sixteen wide column\">\n      <div class=\"chat-controls\">\n        <div class=\"ui right action fluid input\">\n          <input [(ngModel)]=\"message\" type=\"text\" (keypress)=\"onKeyPress($event)\" placeholder=\"Enter the message here :)\">\n          <button (click)=\"onBtnSendClick()\" [disabled]=\"message.length == 0\" class=\"ui icon button positive\">\n              <i class=\"send icon\"></i>\n          </button>   \n        </div>\n      </div>\n    </div>\n  </div>\n</div>"
 
 /***/ }),
 
@@ -454,7 +457,7 @@ exports = module.exports = __webpack_require__("../../../../css-loader/lib/css-b
 
 
 // module
-exports.push([module.i, ".message-box {\n  height: 80vh;\n  display: block;\n  padding: 20px;\n  overflow-y: auto; }\n\n.chat-controls {\n  height: 17vh;\n  padding: 15px; }\n\n.old-messages-container {\n  padding: 3px;\n  text-align: center; }\n", ""]);
+exports.push([module.i, ".message-box {\n  height: 69vh;\n  display: block;\n  padding: 20px;\n  overflow-y: auto; }\n\n.chat-controls {\n  padding: 15px; }\n\n.old-messages-container {\n  padding: 3px;\n  text-align: center; }\n", ""]);
 
 // exports
 
@@ -472,7 +475,8 @@ module.exports = module.exports.toString();
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/esm5/core.js");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_router__ = __webpack_require__("../../../router/esm5/router.js");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_angularfire2_firestore__ = __webpack_require__("../../../../angularfire2/firestore/index.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__services_auth_auth_service__ = __webpack_require__("../../../../../src/app/services/auth/auth.service.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_angularfire2_database__ = __webpack_require__("../../../../angularfire2/database/index.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__services_auth_auth_service__ = __webpack_require__("../../../../../src/app/services/auth/auth.service.ts");
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -486,9 +490,11 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 
 
 
+
 var ChatBoxComponent = (function () {
-    function ChatBoxComponent(route, firestore, authService) {
+    function ChatBoxComponent(route, firedatabase, firestore, authService) {
         this.route = route;
+        this.firedatabase = firedatabase;
         this.firestore = firestore;
         this.authService = authService;
         this.showOldMessages = false;
@@ -501,6 +507,10 @@ var ChatBoxComponent = (function () {
         // Start with 20 messages    
         this.messagesLimit = 20;
         this.route.params.subscribe(function (params) {
+            // unsubscribe previous thread
+            if (_this.messagesListener) {
+                _this.messagesListener();
+            }
             _this.threadId = params.thread_id;
             _this.loadingMessages = true;
             _this.loadMessages(_this.threadId, _this.messagesLimit, function (messages) {
@@ -540,7 +550,8 @@ var ChatBoxComponent = (function () {
             var message = {
                 sender: senderRef,
                 message: this.message,
-                timestamp: Date.now()
+                timestamp: Date.now(),
+                read: false
             };
             this.message = "";
             this.firestore.collection(messagesPath)
@@ -551,13 +562,29 @@ var ChatBoxComponent = (function () {
         }
     };
     ChatBoxComponent.prototype.onKeyPress = function (evt) {
+        var _this = this;
         // Enter is pressed
         if (evt.keyCode == 13) {
             // Trigger message sending
             this.onBtnSendClick();
         }
+        this.firedatabase.database
+            .ref("/users/" + this.authService.currentUser.uid)
+            .update({ typing: true })
+            .then(function () {
+            setTimeout(function () {
+                _this.firedatabase.database
+                    .ref("/users/" + _this.authService.currentUser.uid)
+                    .update({ typing: false });
+            }, 1000);
+        });
+        this.firedatabase.database
+            .ref("/users/" + this.authService.currentUser.uid)
+            .onDisconnect()
+            .update({ typing: false });
     };
     ChatBoxComponent.prototype.loadMessages = function (threadId, messagesSize, callback, once) {
+        var _this = this;
         if (once === void 0) { once = false; }
         // Load the messages
         var messagesPath = "/threads/" + threadId + "/messages";
@@ -566,11 +593,15 @@ var ChatBoxComponent = (function () {
             .orderBy('timestamp', 'desc')
             .limit(messagesSize);
         if (!once) {
-            querySnap
+            this.messagesListener = querySnap
                 .onSnapshot(function (snap) {
                 var messages = [];
                 snap.docs.forEach(function (message) {
                     messages.push(message.data());
+                    if (message.data().sender.id != _this.authService.currentUser.uid) {
+                        _this.firestore.doc(messagesPath + "/" + message.id)
+                            .update({ read: true });
+                    }
                 });
                 callback(messages.reverse());
             });
@@ -607,8 +638,9 @@ var ChatBoxComponent = (function () {
             styles: [__webpack_require__("../../../../../src/app/components/threads/chat-box/chat-box.component.scss")]
         }),
         __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1__angular_router__["a" /* ActivatedRoute */],
+            __WEBPACK_IMPORTED_MODULE_3_angularfire2_database__["a" /* AngularFireDatabase */],
             __WEBPACK_IMPORTED_MODULE_2_angularfire2_firestore__["a" /* AngularFirestore */],
-            __WEBPACK_IMPORTED_MODULE_3__services_auth_auth_service__["a" /* AuthService */]])
+            __WEBPACK_IMPORTED_MODULE_4__services_auth_auth_service__["a" /* AuthService */]])
     ], ChatBoxComponent);
     return ChatBoxComponent;
 }());
@@ -620,7 +652,7 @@ var ChatBoxComponent = (function () {
 /***/ "../../../../../src/app/components/threads/chat-bubble/chat-bubble.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"bubble\" [ngClass]=\"{ reply: isReply }\" [attr.data-tooltip]=\" time\" data-inverted=\"\" data-position=\"bottom center\">\n    {{ message }}\n</div>"
+module.exports = "<div class=\"bubble\" [ngClass]=\"{ reply: isReply }\" [attr.data-tooltip]=\" time\" data-inverted=\"\" data-position=\"bottom center\">\n    {{ message }}\n    <i *ngIf=\"!isReply\" [ngClass]=\"{ green: isRead }\" class=\"fa read fa-check pull-right\"></i>\n</div>"
 
 /***/ }),
 
@@ -632,7 +664,7 @@ exports = module.exports = __webpack_require__("../../../../css-loader/lib/css-b
 
 
 // module
-exports.push([module.i, ".bubble {\n  color: #212121;\n  background: rgba(236, 240, 241, 0.84);\n  padding: 8px 16px;\n  border-radius: 5px 15px 15px 15px;\n  font-weight: 400;\n  text-transform: none;\n  text-align: left;\n  font-size: 16px;\n  letter-spacing: .5px;\n  margin: 0 0 2px 0;\n  max-width: 65%;\n  float: right;\n  clear: both;\n  line-height: 1.5em;\n  word-break: break-word; }\n\n.bubble.reply {\n  background: rgba(41, 128, 185, 0.8);\n  color: #fff;\n  border-radius: 15px 15px 5px 5px;\n  float: left;\n  clear: both;\n  cursor: pointer;\n  text-decoration: none;\n  word-break: normal; }\n", ""]);
+exports.push([module.i, ".bubble {\n  color: #212121;\n  background: rgba(236, 240, 241, 0.84);\n  padding: 8px 20px;\n  border-radius: 5px 15px 15px 15px;\n  font-weight: 400;\n  text-transform: none;\n  text-align: left;\n  font-size: 16px;\n  letter-spacing: .5px;\n  margin: 0 0 2px 0;\n  max-width: 65%;\n  float: right;\n  clear: both;\n  line-height: 1.5em;\n  word-break: break-word; }\n  .bubble .fa.read {\n    font-size: 10px;\n    position: absolute;\n    right: 5px;\n    bottom: 5px; }\n\n.bubble.reply {\n  background: rgba(41, 128, 185, 0.8);\n  color: #fff;\n  border-radius: 15px 15px 5px 5px;\n  float: left;\n  clear: both;\n  cursor: pointer;\n  text-decoration: none;\n  word-break: normal; }\n", ""]);
 
 // exports
 
@@ -679,6 +711,10 @@ var ChatBubbleComponent = (function () {
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["D" /* Input */])(),
         __metadata("design:type", String)
     ], ChatBubbleComponent.prototype, "message", void 0);
+    __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["D" /* Input */])(),
+        __metadata("design:type", Boolean)
+    ], ChatBubbleComponent.prototype, "isRead", void 0);
     ChatBubbleComponent = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
             selector: 'lc-chat-bubble',
@@ -697,7 +733,7 @@ var ChatBubbleComponent = (function () {
 /***/ "../../../../../src/app/components/threads/thread-list/thread-list.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"ui cards\">\n    <a routerLinkActive=\"selected-card\" [routerLink]=\"['/threads', thread.thread.id]\" *ngFor=\"let thread of threads\" class=\"ui fluid card\">\n        <div class=\"content\">\n            <img src=\"{{ thread.user.photoURL }}\" alt=\"Your DP\" class=\"ui mini left floated circular image\">\n            <div class=\"header\">{{ thread.user.displayName }}</div>\n            <div class=\"meta\">** Message **</div>\n        </div>\n    </a>\n</div>"
+module.exports = "<div class=\"ui cards\">\n    <a (click)=\"onThreadClick(thread.user)\" routerLinkActive=\"selected-card\" [routerLink]=\"['/threads', thread.thread.id]\" *ngFor=\"let thread of threads\" class=\"ui fluid card\">\n        <div class=\"content\">\n            <i [ngClass]=\"{ red: !thread.user.online, green: thread.user.online }\" class=\"pull-right fa fa fa-circle\"></i>\n            <img src=\"{{ thread.user.photoURL }}\" alt=\"Your DP\" class=\"ui mini left floated circular image\">\n            <div class=\"header\">{{ thread.user.displayName }}</div>\n            <div class=\"meta\" *ngIf=\"thread.newMessagesCount > 0\">\n                <div class=\"statistic\">\n                    <div class=\"value\">\n                        <i class=\"fa fa-comments-o\"></i> {{ thread.newMessagesCount }} {{ thread.lastMessage }}\n                    </div>\n                </div>\n            </div>\n        </div>       \n    </a>\n</div>"
 
 /***/ }),
 
@@ -737,9 +773,17 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 
 var ThreadListComponent = (function () {
     function ThreadListComponent() {
+        this.select = new __WEBPACK_IMPORTED_MODULE_0__angular_core__["v" /* EventEmitter */]();
     }
     ThreadListComponent.prototype.ngOnInit = function () {
     };
+    ThreadListComponent.prototype.onThreadClick = function (user) {
+        this.select.emit(user);
+    };
+    __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["P" /* Output */])(),
+        __metadata("design:type", __WEBPACK_IMPORTED_MODULE_0__angular_core__["v" /* EventEmitter */])
+    ], ThreadListComponent.prototype, "select", void 0);
     __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["D" /* Input */])(),
         __metadata("design:type", Array)
@@ -762,7 +806,7 @@ var ThreadListComponent = (function () {
 /***/ "../../../../../src/app/components/threads/threads.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<lc-navbar></lc-navbar>\n<div class=\"ui grid\">\n    <div *ngIf=\"loadingThreads\" class=\"ui active inverted dimmer\">\n        <div class=\"ui text  massive loader\">Loading...</div>\n    </div>\n    <div class=\"row\">\n        <div class=\"six wide column\">\n            <div class=\"wrapper\">\n                <div class=\"user-content\">\n                    <div class=\"ui small fluid green card\">\n                        <div class=\"content\">\n                            <img src=\"{{ (currentUser | async)?.photoURL }}\" alt=\"Your DP\" class=\"ui mini left floated circular image\">\n                            <div class=\"header\">{{ (currentUser | async)?.displayName }}</div>\n                            <div class=\"meta\">{{ status }}</div>\n                        </div>\n                    </div>\n                    <div class=\"ui icon fluid input\">\n                        <input placeholder=\"Search...\" type=\"text\">\n                        <i class=\"inverted circular search link icon\"></i>\n                    </div>\n                </div>\n                <div class=\"threads\">\n                    <lc-thread-list [threads]=\"threads\"></lc-thread-list>\n                </div>\n            </div>\n        </div>\n        <div class=\"ten wide column\">\n            <router-outlet></router-outlet>\n        </div>\n    </div>\n</div>"
+module.exports = "<lc-navbar></lc-navbar>\n<div class=\"ui grid\">\n    <div *ngIf=\"loadingThreads\" class=\"ui active inverted dimmer\">\n        <div class=\"ui text  massive loader\">Loading...</div>\n    </div>\n    <div class=\"row\">\n        <div class=\"six wide column\">\n            <div class=\"wrapper\">\n                <div class=\"user-content\">\n                    <div class=\"ui small fluid green card\">\n                        <div class=\"content\">\n                            <img src=\"{{ (currentUser | async)?.photoURL }}\" alt=\"Your DP\" class=\"ui mini left floated circular image\">\n                            <div class=\"header\">{{ (currentUser | async)?.displayName }}</div>\n                            <div class=\"meta\">{{ status }}</div>\n                        </div>\n                    </div>\n                    <div class=\"ui secondary segment\">\n                    </div>\n                </div>\n                <div class=\"threads\">\n                    <lc-thread-list (select)=\"onThreadClick($event)\" [threads]=\"threads\"></lc-thread-list>\n                </div>\n            </div>\n        </div>\n        <div class=\"ten wide column\">\n            <div *ngIf=\"threadUser\" class=\"ui small fluid yellow card\">\n                <div class=\"content\">\n                    <img src=\"{{ threadUser.photoURL }}\" alt=\"{{ threadUser.displayName }}'s DP'\" class=\"ui mini left floated circular image\">\n                    <div class=\"header\">{{ threadUser.displayName }}</div>\n                    <div *ngIf=\"!threadUser.typing\" class=\"meta\">{{ threadUser.online ? 'Online': threadUser.lastSeenInWords }}</div>\n                    <div *ngIf=\"threadUser.typing\" class=\"typing meta\">typing...</div>                    \n                </div>\n            </div>\n            <router-outlet></router-outlet>\n        </div>\n    </div>\n</div>"
 
 /***/ }),
 
@@ -774,7 +818,7 @@ exports = module.exports = __webpack_require__("../../../../css-loader/lib/css-b
 
 
 // module
-exports.push([module.i, ".card {\n  border-radius: 0px !important;\n  margin-bottom: 2px !important; }\n\ninput {\n  border-radius: 0px !important; }\n\n.user-content {\n  -webkit-box-flex: 0;\n      -ms-flex: 0 0 auto;\n          flex: 0 0 auto; }\n\n.threads {\n  -webkit-box-flex: 1;\n      -ms-flex: 1 1 auto;\n          flex: 1 1 auto;\n  overflow-y: auto; }\n\n.wrapper {\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  -webkit-box-orient: vertical;\n  -webkit-box-direction: normal;\n      -ms-flex-direction: column;\n          flex-direction: column;\n  height: 92vh;\n  border: 1px solid #ecf0f1; }\n\n.column {\n  padding: 0 !important; }\n", ""]);
+exports.push([module.i, ".card {\n  border-radius: 0px !important;\n  margin-bottom: 2px !important; }\n\ninput {\n  border-radius: 0px !important; }\n\n.user-content {\n  -webkit-box-flex: 0;\n      -ms-flex: 0 0 auto;\n          flex: 0 0 auto; }\n\n.threads {\n  -webkit-box-flex: 1;\n      -ms-flex: 1 1 auto;\n          flex: 1 1 auto;\n  overflow-y: auto; }\n\n.wrapper {\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  -webkit-box-orient: vertical;\n  -webkit-box-direction: normal;\n      -ms-flex-direction: column;\n          flex-direction: column;\n  height: 92vh;\n  border: 1px solid #ecf0f1; }\n\n.column {\n  padding: 0 !important; }\n\n.segment {\n  margin: 0px !important;\n  border-radius: 0px !important; }\n\n.typing {\n  color: #2ecc71 !important;\n  font-weight: bold !important; }\n", ""]);
 
 // exports
 
@@ -791,7 +835,10 @@ module.exports = module.exports.toString();
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return ThreadsComponent; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/esm5/core.js");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_angularfire2_firestore__ = __webpack_require__("../../../../angularfire2/firestore/index.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__services_auth_auth_service__ = __webpack_require__("../../../../../src/app/services/auth/auth.service.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_angularfire2_database__ = __webpack_require__("../../../../angularfire2/database/index.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_timeago_js__ = __webpack_require__("../../../../timeago.js/dist/timeago.min.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_timeago_js___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_3_timeago_js__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__services_auth_auth_service__ = __webpack_require__("../../../../../src/app/services/auth/auth.service.ts");
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -804,14 +851,19 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 
 
 
+
+
 var ThreadsComponent = (function () {
-    function ThreadsComponent(firestore, authService) {
+    function ThreadsComponent(firestore, firedatabase, authService) {
         this.firestore = firestore;
+        this.firedatabase = firedatabase;
         this.authService = authService;
         this.loadingThreads = false;
     }
     ThreadsComponent.prototype.ngOnInit = function () {
         var _this = this;
+        // Set the user is online
+        this.authService.setUserOnline(true);
         this.threads = [];
         this.loadingThreads = true;
         this.currentUser = this.authService.user;
@@ -830,15 +882,66 @@ var ThreadsComponent = (function () {
                         _this.firestore.doc(thread.user.path)
                             .valueChanges()
                             .subscribe(function (userDoc) {
+                            // Assign the uid
+                            userDoc.uid = thread.user.id;
                             // Assign it to the threadlist
                             _this.threads[index] = {
                                 thread: thread.thread,
-                                user: userDoc
+                                user: userDoc,
+                                newMessagesCount: 0,
+                                lastMessage: ''
                             };
+                            // Look for new messages
+                            _this.firestore.collection("/threads/" + thread.thread.id + "/messages")
+                                .ref
+                                .where('sender', '==', thread.user)
+                                .where('read', '==', false)
+                                .onSnapshot(function (snap) {
+                                _this.threads[index].newMessagesCount = snap.docs.length;
+                                if (snap.docs.length > 0) {
+                                    _this.threads[index].lastMessage = snap.docs[snap.docs.length - 1].data().message;
+                                }
+                            });
+                            // Set each user online status
+                            _this.onlineStatus(userDoc, function (status) {
+                                // Return if the user record is not yet created in firebase
+                                if (!status) {
+                                    return;
+                                }
+                                _this.threads[index].user.online = status.online;
+                                if (!status.online) {
+                                    _this.threads[index].user.lastSeen = status.lastSeen;
+                                    if (status.lastSeen > 0) {
+                                        _this.threads[index].user.lastSeenInWords = 'Last seen ' + __WEBPACK_IMPORTED_MODULE_3_timeago_js___default()().format(status.lastSeen);
+                                    }
+                                    else {
+                                        _this.threads[index].user.lastSeenInWords = '';
+                                    }
+                                }
+                            });
                         });
                     });
                 }
             });
+        });
+    };
+    ThreadsComponent.prototype.onlineStatus = function (user, callback) {
+        this.firedatabase.database
+            .ref("/users/" + user.uid)
+            .on('value', function (snap) {
+            callback(snap.val());
+        });
+    };
+    ThreadsComponent.prototype.onThreadClick = function (user) {
+        var _this = this;
+        if (this.typingListener) {
+            this.typingListener();
+        }
+        this.threadUser = user;
+        this.typingListener = this.firedatabase.database
+            .ref("/users/" + user.uid)
+            .on('value', function (snap) {
+            _this.threadUser.typing = snap.val().typing;
         });
     };
     ThreadsComponent = __decorate([
@@ -847,7 +950,9 @@ var ThreadsComponent = (function () {
             template: __webpack_require__("../../../../../src/app/components/threads/threads.component.html"),
             styles: [__webpack_require__("../../../../../src/app/components/threads/threads.component.scss")]
         }),
-        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_angularfire2_firestore__["a" /* AngularFirestore */], __WEBPACK_IMPORTED_MODULE_2__services_auth_auth_service__["a" /* AuthService */]])
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_angularfire2_firestore__["a" /* AngularFirestore */],
+            __WEBPACK_IMPORTED_MODULE_2_angularfire2_database__["a" /* AngularFireDatabase */],
+            __WEBPACK_IMPORTED_MODULE_4__services_auth_auth_service__["a" /* AuthService */]])
     ], ThreadsComponent);
     return ThreadsComponent;
 }());
@@ -1083,10 +1188,11 @@ var THREADS_ROUTE = [
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return AuthService; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/esm5/core.js");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_angularfire2_auth__ = __webpack_require__("../../../../angularfire2/auth/index.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_firebase__ = __webpack_require__("../../../../firebase/index.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_firebase___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_firebase__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_rxjs_Rx__ = __webpack_require__("../../../../rxjs/_esm5/Rx.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__angular_router__ = __webpack_require__("../../../router/esm5/router.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_angularfire2_database__ = __webpack_require__("../../../../angularfire2/database/index.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_firebase__ = __webpack_require__("../../../../firebase/index.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_firebase___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_3_firebase__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_rxjs_Rx__ = __webpack_require__("../../../../rxjs/_esm5/Rx.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__angular_router__ = __webpack_require__("../../../router/esm5/router.js");
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -1101,10 +1207,12 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 
 
 
+
 var AuthService = (function () {
-    function AuthService(firebaseAuth, router) {
+    function AuthService(firebaseAuth, firedatabase, router) {
         var _this = this;
         this.firebaseAuth = firebaseAuth;
+        this.firedatabase = firedatabase;
         this.router = router;
         this.user = this.firebaseAuth.authState;
         // Listen for changes in authentication
@@ -1123,22 +1231,48 @@ var AuthService = (function () {
     AuthService.prototype.login = function (provider) {
         if (provider == AuthService_1.providers.FACEBOOK) {
             // Login with facebook
-            return this.firebaseAuth.auth.signInWithRedirect(new __WEBPACK_IMPORTED_MODULE_2_firebase__["auth"].FacebookAuthProvider());
+            return this.firebaseAuth.auth.signInWithRedirect(new __WEBPACK_IMPORTED_MODULE_3_firebase__["auth"].FacebookAuthProvider());
         }
         else if (provider == AuthService_1.providers.GOOGLE) {
             // Login with google
-            return this.firebaseAuth.auth.signInWithRedirect(new __WEBPACK_IMPORTED_MODULE_2_firebase__["auth"].GoogleAuthProvider());
+            return this.firebaseAuth.auth.signInWithRedirect(new __WEBPACK_IMPORTED_MODULE_3_firebase__["auth"].GoogleAuthProvider());
         }
         else if (provider == AuthService_1.providers.GITHUB) {
             // Login with google
-            return this.firebaseAuth.auth.signInWithRedirect(new __WEBPACK_IMPORTED_MODULE_2_firebase__["auth"].GithubAuthProvider());
+            return this.firebaseAuth.auth.signInWithRedirect(new __WEBPACK_IMPORTED_MODULE_3_firebase__["auth"].GithubAuthProvider());
         }
     };
     AuthService.prototype.logout = function () {
+        this.setUserOnline(false);
         return this.firebaseAuth.auth.signOut();
     };
     AuthService.prototype.isLoggedIn = function () {
         return this.user.map(function (user) { return user ? true : false; });
+    };
+    AuthService.prototype.setUserOnline = function (status) {
+        if (status) {
+            // Set the user is online
+            this.firedatabase.database
+                .ref("/users/" + this.currentUser.uid)
+                .set({ online: true });
+            // Checkpoint to make it offline when the user disconnects
+            this.firedatabase.database
+                .ref("/users/" + this.currentUser.uid)
+                .onDisconnect()
+                .set({
+                online: false,
+                lastSeen: Date.now()
+            });
+        }
+        else {
+            // Set the user is offline
+            this.firedatabase.database
+                .ref("/users/" + this.currentUser.uid)
+                .set({
+                online: false,
+                lastSeen: Date.now()
+            });
+        }
     };
     Object.defineProperty(AuthService.prototype, "currentUser", {
         get: function () {
@@ -1155,7 +1289,8 @@ var AuthService = (function () {
     AuthService = AuthService_1 = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["A" /* Injectable */])(),
         __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_angularfire2_auth__["a" /* AngularFireAuth */],
-            __WEBPACK_IMPORTED_MODULE_4__angular_router__["b" /* Router */]])
+            __WEBPACK_IMPORTED_MODULE_2_angularfire2_database__["a" /* AngularFireDatabase */],
+            __WEBPACK_IMPORTED_MODULE_5__angular_router__["b" /* Router */]])
     ], AuthService);
     return AuthService;
     var AuthService_1;
