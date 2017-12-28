@@ -949,6 +949,9 @@ var ThreadsComponent = (function () {
         this.typingListener = this.firedatabase.database
             .ref("/users/" + user.uid)
             .on('value', function (snap) {
+            if (!snap) {
+                return;
+            }
             _this.threadUser.typing = snap.val().typing;
         });
     };
