@@ -873,6 +873,9 @@ var ThreadsComponent = (function () {
             _this.firestore.doc("users/" + user.uid)
                 .valueChanges()
                 .subscribe(function (userDoc) {
+                if (!userDoc) {
+                    return;
+                }
                 _this.status = userDoc.status;
                 var threads = userDoc.threads;
                 _this.loadingThreads = false;
