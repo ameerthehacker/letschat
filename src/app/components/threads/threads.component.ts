@@ -108,6 +108,7 @@ export class ThreadsComponent implements OnInit {
     this.typingListener = this.firedatabase.database
     .ref(`/users/${user.uid}`)
     .on('value', (snap) => {
+      if(!snap) { return; }
       this.threadUser.typing = snap.val().typing;
     });
   }
