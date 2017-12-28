@@ -24,6 +24,8 @@ export class ThreadsComponent implements OnInit {
   constructor(private firestore: AngularFirestore, private authService: AuthService) { }
 
   ngOnInit() {
+    // Set the user is online
+    this.authService.setUserOnline(true);
     this.threads = [];
     this.loadingThreads = true;
     this.currentUser = this.authService.user;    
