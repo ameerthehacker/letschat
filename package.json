@@ -9,7 +9,8 @@
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e",
-    "ngh": "ng build --env=prod --base-href 'https://ameerthehacker.github.io/letschat/' && ngh"
+    "ngh": "ng build --env=prod --base-href 'https://ameerthehacker.github.io/letschat/' && ngh",
+    "build:firebase": "ng build --env=prod --base-href 'https://letschat-bbbfd.firebaseapp.com'"
   },
   "private": true,
   "dependencies": {
