@@ -6,4 +6,5 @@ export class User {
     public threads: Object[];
     public online: boolean;
     public lastSeen: number;
+    public lastSeenInWords: string;
 }

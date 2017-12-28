@@ -7,8 +7,10 @@ import { Thread } from "../../models/thread";
 import { AngularFirestore } from "angularfire2/firestore";
 import { AngularFireDatabase } from "angularfire2/database";
 import * as firebase from 'firebase';
+import timeago from 'timeago.js';
 
 import { AuthService } from '../../services/auth/auth.service';
+
 
 @Component({
   selector: 'lc-threads',
@@ -75,6 +77,12 @@ export class ThreadsComponent implements OnInit {
                 this.threads[index].user.online = status.online;              
                 if(!status.online) {
                   this.threads[index].user.lastSeen = status.lastSeen;
+                  if(status.lastSeen > 0) {
+                    this.threads[index].user.lastSeenInWords = 'Last seen ' + timeago().format(status.lastSeen);
+                  }
+                  else {
+                    this.threads[index].user.lastSeenInWords = '';
+                  }
                 }
               });
             });
