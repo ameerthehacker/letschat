@@ -45,7 +45,7 @@ export class PeopleComponent implements OnInit {
     });
   }
   onAddClick(threadId) {
-    this.router.navigate(['/threads', threadId]);
+    this.router.navigate(['/threads']);
   }
 
 }
