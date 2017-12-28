@@ -8,7 +8,7 @@
         <div *ngIf="showOldMessages" class="old-messages-container">
             <button [ngClass]="{ loading: loadingOldMessages }" (click)="onBtnOldMessagesClick()" class="ui tiny primary button" [disabled]="loadingOldMessages"><i class="fa fa-arrow-circle-o-up"></i> &nbsp; Old Messages</button>
         </div>
-        <lc-chat-bubble *ngFor="let message of messages" [isReply]="authService.currentUser.uid != message.sender.id" [message]="message.message" [timestamp]="message.timestamp"></lc-chat-bubble>
+        <lc-chat-bubble *ngFor="let message of messages" [isRead]="message.read" [isReply]="authService.currentUser.uid != message.sender.id" [message]="message.message" [timestamp]="message.timestamp"></lc-chat-bubble>
       </div>
     </div>
     <div class="sixteen wide column">

@@ -16,6 +16,8 @@ export class ChatBubbleComponent implements OnInit {
   timestamp: number;
   @Input()
   message: string;
+  @Input()
+  isRead: boolean;
   time: string; 
 
   constructor() { }

@@ -2,7 +2,7 @@
 .bubble {
 	color: #212121;
 	background: rgba(236, 240, 241, 0.84);
-	padding: 8px 16px;
+	padding: 8px 20px;
 	border-radius: 5px 15px 15px 15px;
 	font-weight: 400;
 	text-transform: none;
@@ -15,6 +15,13 @@
 	clear: both;
 	line-height: 1.5em;
 	word-break: break-word;
+
+	.fa.read {
+		font-size: 10px;
+		position: absolute;
+		right: 5px;
+		bottom: 5px;
+	}
 }
 .bubble.reply {
 	background: rgba(41,128,185, 0.8);

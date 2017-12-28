@@ -1,3 +1,4 @@
 <div class="bubble" [ngClass]="{ reply: isReply }" [attr.data-tooltip]=" time" data-inverted="" data-position="bottom center">
     {{ message }}
+    <i *ngIf="!isReply" [ngClass]="{ green: isRead }" class="fa read fa-check pull-right"></i>
 </div>

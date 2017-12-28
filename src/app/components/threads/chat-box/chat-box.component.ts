@@ -103,6 +103,10 @@ export class ChatBoxComponent implements OnInit {
         let messages = [];        
         snap.docs.forEach((message: any) => {
           messages.push(message.data());
+          if(message.data().sender.id != this.authService.currentUser.uid) {
+            this.firestore.doc(`${messagesPath}/${message.id}`)
+            .update({ read: true });
+          }
         });
         callback(messages.reverse());
       });
